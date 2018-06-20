@@ -33,7 +33,7 @@ export class Contacts extends React.Component<RouteComponentProps<any>, any> {
         this.setState({ searchQuery: event.target.value });
     }
 
-    handleSeachSubmit(event: React.FormEvent<HTMLFormElement>) {
+    handleSearchSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         if(!this.state.searchQuery){
@@ -57,7 +57,7 @@ export class Contacts extends React.Component<RouteComponentProps<any>, any> {
     render() {
         return <div>
             <h1>Contacts</h1>
-            <form className="form-inline my-2 my-lg-0" onSubmit={(e) => this.handleSeachSubmit(e)}>
+            <form className="form-inline my-2 my-lg-0" onSubmit={(e) => this.handleSearchSubmit(e)}>
                 <input className="form-control form-control form-control-sm" type="text" value={this.state.searchQuery} onChange={(e) => this.handleSearchQueryChange(e)} placeholder="Search" />
                 <button className="btn btn-outline-success btn-sm" type="submit">Search</button>&nbsp;
             </form>
